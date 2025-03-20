@@ -14,7 +14,7 @@ const LoginPage = () => {
   const { isLoggingIn, login } = useAuthStore();
   const handleSubmit = (e) => {
     e.preventDefault();
-      login(formData);
+    login(formData);
   };
   return (
     <div className="h-screen grid lg:grid-cols-2">
