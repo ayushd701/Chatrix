@@ -5,7 +5,7 @@ import {
   HomePage,
   ProfilePage,
   SettingsPage,
-  SigninPage,
+  LoginPage,
   SignupPage,
 } from "./pages/index";
 import { useAuthStore } from "./store/useAuthStore";
@@ -33,15 +33,15 @@ const App = () => {
       <Routes>
         <Route
           path="/"
-          element={authUser ? <HomePage /> : <Navigate to="/signin" />}
+          element={authUser ? <HomePage /> : <Navigate to="/login" />}
         />
         <Route
           path="/signup"
           element={!authUser ? <SignupPage /> : <Navigate to="/" />}
         />
         <Route
-          path="/signin"
-          element={!authUser ? <SigninPage /> : <Navigate to="/" />}
+          path="/login"
+          element={!authUser ? <LoginPage /> : <Navigate to="/" />}
         />
         <Route
           path="/profile"
