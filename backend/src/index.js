@@ -6,9 +6,9 @@ import cors from "cors";
 import authRoute from "./routes/auth.route.js";
 import messageRoute from "./routes/message.route.js";
 import { connectMongoDb } from "./lib/db.js";
+import { app , server} from "./lib/socket.js"
 
 dotenv.config();
-const app = express();
 const PORT = process.env.PORT;
 
 app.use(express.json());
@@ -22,7 +22,7 @@ app.use(
 app.use("/api/auth", authRoute);
 app.use("/api/message", messageRoute);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   connectMongoDb();
 });
